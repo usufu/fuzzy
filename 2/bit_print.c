@@ -1,6 +1,4 @@
-#include <stdlib.h>
-#include <string.h>
-#include <stdio.h>
+#include "header.h"
 
 typedef union bitshow{
     unsigned bit1:1;
@@ -13,13 +11,6 @@ typedef union bitshow{
     unsigned bit8:8;
     int i;
 }bitshow;
-
-
-
-
-
-
-
 
 int main(int argc, char* argv)
 {
