@@ -1,14 +1,15 @@
 CC = gcc
 OUT=out/
-SRC=$(wildcard *.c)
-BIN=$(patsubst %.c,$(OUT)%,$(SRC))
+SRC=$(wildcard *.c, src/*.c)
+DIR=$(notdir $(SRC))
+BIN=$(patsubst %.c,$(OUT)%,$(DIR))
 
 MAKE_OBJECT_DIR := $(shell mkdir -p $(OUT))
 
 
 all:$(BIN)
 
-$(OUT)%:%.c
+$(OUT)%:src/%.c
 	$(CC) -o $@ $^
 
 .PHONY: clean
